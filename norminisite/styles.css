@@ -1,0 +1,199 @@
+/* Общие стили для body */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    overflow-x: hidden;
+}
+body {
+    background-image: url('fonegeng.webp'), url('fonegeng.webp');
+    background-position: center, bottom;
+    background-size: auto;
+    background-repeat: repeat;
+    color: white;  
+    margin: 0;
+    height: 100vh;                      /* Устанавливаем высоту на 100% экрана */
+    display: flex;                      /* Используем flexbox для центрирования */
+    flex-direction: column;             /* Размещение элементов вертикально */
+    justify-content: flex-start;            /* Центрируем по вертикали */
+    align-items: center;                /* Центрируем по горизонтали */
+    text-align: center;                 /* Выравнивание текста по центру */
+}
+
+/* Логотип */
+.logo {
+    font-size: 3em;                     /* Размер шрифта для логотипа */
+    margin-bottom: 20px;                /* Отступ снизу от логотипа */
+}
+
+/* Текст */
+p {
+    font-size: 1.5em;                   /* Уменьшаем размер шрифта для текста */
+    margin-bottom: 30px;                /* Отступ снизу от текста */
+}
+
+/* Кнопки */
+.button {
+    display: inline-block;
+    background-color: #FF0000;
+    color: #000000;
+    padding: 15px 25px;
+    text-decoration: none;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #FF0000;
+}
+
+.category-buttons a {
+    display: block;
+    margin: 20px;
+}
+
+/* Карточки меню */
+.menu-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    padding-top: 20px;             /* Добавьте отступ сверху */
+    margin-top: 20px;
+    overflow: visible;             /* Убедитесь, что содержимое не обрезается */
+}
+
+.menu-item {
+    background-color: #000000;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    height: auto;
+    overflow: hidden;
+}
+
+.menu-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+.menu-item h3 {
+    margin: 10px 0;
+}
+
+.menu-item p {
+    font-size: 1.1em;
+    color: #ffffff;
+}
+
+/* Адаптивность для мобильных устройств (макс. ширина 768px) */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2em;   /* Уменьшаем логотип для мобильных устройств */
+    }
+
+    p {
+        font-size: 1.2em;  /* Уменьшаем размер текста */
+    }
+
+    .button {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    .menu-items {
+        flex-direction: row;  /* Размещаем карточки горизонтально на мобильных устройствах */
+        justify-content: center; /* Центрируем карточки по горизонтали */
+        align-items: center;    /* Центрируем по вертикали */
+        width: 100%;            /* Убираем ограничение по ширине */
+        max-width: 100%;        /* Убираем ограничение по ширине */
+    }
+
+    .menu-item {
+        width: 150px;          /* Уменьшаем карточки */
+        margin: 10px;          /* Уменьшаем отступы между карточками */
+    }
+}
+
+/* Адаптивность для очень маленьких экранов (макс. ширина 480px) */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5em;   /* Логотип еще меньше для очень маленьких экранов */
+    }
+
+    p {
+        font-size: 1em;     /* Размер текста также уменьшаем */
+    }
+
+    .button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    .menu-items {
+        flex-direction: column; /* Меню будет отображаться вертикально */
+        justify-content: center; /* Центрируем все элементы */
+        align-items: center;     /* Центрируем по горизонтали */
+    }
+
+    .menu-item {
+        width: 80%;             /* Карточки занимают 80% ширины экрана */
+        margin: 10px 0;         /* Уменьшаем отступы */
+    }
+}
+
+    .category-buttons a {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+
+/* Новый стиль для кнопки с изображением (PNG) */
+.image-button {
+    width: 200px; /* Размер изображения */
+    height: auto; /* Сохраняем пропорции */
+    cursor: pointer; /* Указатель при наведении */
+    animation: shake 0.5s ease-in-out infinite; /* Добавление анимации тряски */
+}
+
+/* Анимация тряски */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+.category-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое */
+}
+
+.category-buttons .button {
+    margin: 10px;
+}
+
+/* Стили для уменьшенного и ближе расположенного логотипа */
+.inactive-logo {
+    margin-top: 0.5px;        /* Уменьшенный отступ сверху для размещения ближе к кнопкам */
+    opacity: 0.5;           /* Полупрозрачность для неактивного вида */
+    width: 83px;            /* Уменьшенный размер логотипа */
+    height: auto;
+    pointer-events: none;   /* Отключаем кликабельность */
+}
